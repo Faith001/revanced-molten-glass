@@ -34,7 +34,7 @@ jobs:
 
       - name: Build
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GPR_KEY: ${{ secrets.GPR_KEY }}
         run: ./gradlew build clean
 
       - name: Setup Node.js
@@ -55,5 +55,5 @@ jobs:
 
       - name: Release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GPR_KEY: ${{ secrets.GPR_KEY }}
         run: npm exec semantic-release
